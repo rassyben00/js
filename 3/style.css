@@ -4,6 +4,29 @@ body {
 	text-align: center;
 	text-transform: uppercase;
 	letter-spacing: .5em;
-	top: 15%;
-	background: linear-gradient(to right, red, yellow);
+    overflow-y: hidden; 
+    overflow-x: hidden;
+    width: 99%;
+    height: 100vh;
+	background: linear-gradient(to bottom, red, yellow);
+}
+
+.color{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.btn{
+    position: absolute;
+    top:60%;
 }
