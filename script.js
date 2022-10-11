@@ -1,18 +1,23 @@
-var minus=document.getElementById("minus");
-var plus=document.getElementById("plus");
-var number=document.getElementById("number");
+let add=document.getElementById("add");
+let todo=document.getElementById("todo");
+let input=document.getElementById("input");
+let tasks=document.getElementById("tasks");
 
-let a = 0;
+add.addEventListener("click", addToDo);
+todo.addEventListener("click", removeToDo);
 
-minus.addEventListener("click", decrease);
-plus.addEventListener("click", increase);
-
-function increase(){
-    a++;
-    number.innerHTML=a;
+function addToDo(){
+    var newItem=document.createElement("div");
+    newItem.classList.add("item");
+    newItem.innerHTML=`<div class="inline">
+                        <p>${input.value}</p>
+                        <button class="remove">x</button>
+                       </div>`
+    todo.append(newItem);
 }
 
-function decrease(){
-    a--;
-    number.innerHTML=a;
+function removeToDo(e){
+    if (e.target.classList.contains("remove")){
+        e.target.parentElement.parentElement.remove();
+    }
 }
