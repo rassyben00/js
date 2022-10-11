@@ -6,9 +6,10 @@ button.addEventListener("click", setColor);
 function setColor(){
     var color1=randomColor();
     var color2=randomColor();
-    body.style.background = "linear-gradient(to right,  "+color1+", "+color2+")";
-    printColor(color1, color2);
-    console.log(color1, color2)
+    var direction=randomDirection();
+    body.style.background = "linear-gradient("+direction+",  "+color1+", "+color2+")";
+    printColor(color1, color2, direction);
+    console.log(color1, color2, direction)
 }
 
 function randomColor(){
@@ -16,11 +17,13 @@ function randomColor(){
     return color;
 }
 
-function printColor(color1, color2){
+function randomDirection(){
+    var randomDirection=Math.floor(Math.random()*360)+"deg";
+    return randomDirection;
+}
+
+function printColor(color1, color2, direction){
     var printRandom=document.getElementById("random_color");
-    printRandom.innerHTML="linear-gradient(to right, "+color1+", "+color2+")";
-
-
-
+    printRandom.innerHTML="linear-gradient("+direction+", "+color1+", "+color2+")";
 }
 
