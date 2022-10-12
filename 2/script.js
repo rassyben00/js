@@ -14,6 +14,7 @@ function addToDo(){
                         <button class="remove">x</button>
                        </div>`
     todo.append(newItem);
+    input.value="";
 }
 
 function removeToDo(e){
