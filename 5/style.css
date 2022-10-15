@@ -8,7 +8,6 @@ body {
     overflow-x: hidden;
     width: 99%;
     height: 100vh;
-	background: linear-gradient(to bottom, red, yellow);
 }
 
 .color{
