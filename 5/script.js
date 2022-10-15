@@ -18,11 +18,10 @@ var button=document.getElementById("button");
 var body=document.getElementById("gradient");
 var firstColor=document.getElementById("random_color");
 
-//button.addEventListener("click", setColor);
-button.addEventListener("click", setInterval(start, 100));
-
+button.addEventListener("click", setInterval(start, 50));
 
 function start(){
+    
     if(color11!=color11new && color11>color11new){
         color11--;
     }if(color11<color11new){
@@ -67,8 +66,6 @@ function start(){
 
 
 
-
-
     if(color11==color11new){
         color11=color11new;
         color11new=randomColor();
@@ -93,6 +90,7 @@ function start(){
         color23=color23new;
         color23new=randomColor();
     }
+    
     if(direction==directionNew){
         direction=directionNew;
         directionNew=randomColor();
@@ -101,13 +99,14 @@ function start(){
     setColor(color11, color12, color13, color21, color22, color23, direction);
 };
 
-function setColor(color11new, color12new, color13new, color21new, color22new, color23new, directionNew){
-    body.style.background = "linear-gradient("+directionNew+"deg,  rgb("+color11new+", "+color12new+", "+color13new+"), rgb("+color21new+", "+color22new+", "+color23new+")";
-    printColor(color11new, color12new, color13new, color21new, color22new, color23new, directionNew);
+function setColor(color11, color12, color13, color21, color22, color23, direction){
+    console.log(color11);
+    body.style.background = "linear-gradient("+direction+"deg,  rgb("+color11+", "+color12+", "+color13+"), rgb("+color21+", "+color22+", "+color23+")";
+    printColor(color11, color12, color13, color21, color22, color23, direction);
 }
 
 function randomColor(){
-    var color=(Math.floor(Math.random()*256));
+    var color=(Math.floor(Math.random()*255));
     return color;
 }
 
