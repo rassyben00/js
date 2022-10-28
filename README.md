@@ -1,4 +1,10 @@
-<<<<<<< HEAD
-a test repository
+Javascript projects
 =======
->>>>>>> 722e3bd85410c3a3de234dee901c0d852361e3fd
+Basic js projects for excercising: - Counter
+                                   - ToDo
+                                   - RandomColorGenerator
+                                   - LookWhatYouType
+                                   - BackgroundLinearGradient
+                                   - Stopwatch
+                                   - JellyBackground
+
