@@ -27,8 +27,21 @@ span {
 	padding: 10px;
 	border-radius: 10px;
 	margin: 5px;
+	transition: 0.7s ease;
 }
 
 h1{
 	font-size: 60px;
 }  
+
+#minus:hover{
+	background-color: rgb(255, 38, 0);
+}
+
+#plus:hover{
+	background-color: rgb(48, 196, 82);
+}
+
+#reset:hover{
+	background-color: rgb(255, 221, 0);
+}
