@@ -21,7 +21,6 @@ var firstColor=document.getElementById("random_color");
 button.addEventListener("click", setInterval(start, 50));
 
 function start(){
-    
     if(color11!=color11new && color11>color11new){
         color11--;
     }if(color11<color11new){
@@ -100,7 +99,6 @@ function start(){
 };
 
 function setColor(color11, color12, color13, color21, color22, color23, direction){
-    console.log(color11);
     body.style.background = "linear-gradient("+direction+"deg,  rgb("+color11+", "+color12+", "+color13+"), rgb("+color21+", "+color22+", "+color23+")";
     printColor(color11, color12, color13, color21, color22, color23, direction);
 }
