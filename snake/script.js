@@ -6,7 +6,6 @@ var context;
 
 var snakeX=blockSize*3;
 var snakeY=blockSize*3;
-
 var snakeBody=[];
 
 var foodX=blockSize*10;
@@ -16,71 +15,88 @@ var velocityX=0;
 var velocityY=0;
 
 var gameOver=false;
+var gameOverMessage;
+
+var restartButton;
 
 var score=0;
 var displayScore;
+var finalScore;
 
-window.onload=function(){
-    canvas=document.getElementById("canvas")
-    canvas.height=rows*blockSize;
-    canvas.width=cols*blockSize;
-    context=canvas.getContext("2d");
-   
-    displayScore=document.getElementById("displayScore");
+canvas=document.getElementById("canvas");
+canvas.height=rows*blockSize;
+canvas.width=cols*blockSize;
+context=canvas.getContext("2d");
+
+displayScore=document.getElementById("displayScore");
+document.addEventListener("keyup", changeDir);
+
+startGame();
+
+function startGame(){
+    gameOver=false;
     displayScore.innerHTML="Score: "+score;
 
     placeFood();
-        
-    document.addEventListener("keyup", changeDir);
-    setInterval(update, 300);
-
-
+    update()
 }
 
 function update(){
-    context.fillStyle="black";
-    context.fillRect(0,0, canvas.width, canvas.height)
-
-    context.fillStyle="red";
-    context.fillRect(foodX, foodY, blockSize, blockSize)
-
-    if(snakeX==foodX && snakeY==foodY){
-        snakeBody.push([foodX, foodY]);
-        score++;
-        displayScore.innerHTML="Score: "+score;
-        placeFood();
+    if(gameOver!=true){
+        setTimeout(() => {
+            context.fillStyle="black";
+            context.fillRect(0,0, canvas.width, canvas.height)
+    
+            context.fillStyle="red";
+            context.fillRect(foodX, foodY, blockSize, blockSize)
+    
+            if(snakeX==foodX && snakeY==foodY){
+                snakeBody.push([foodX, foodY]);
+                score++;
+                displayScore.innerHTML="Score: "+score;
+                placeFood();
+            }
+    
+            for(let i=snakeBody.length-1;i>0;i--){
+                snakeBody[i]=snakeBody[i-1];
+            }
+    
+            if(snakeBody.length){
+                snakeBody[0]=[snakeX, snakeY]
+            }
+    
+            context.fillStyle="lime";
+            snakeX=snakeX+velocityX*blockSize;
+            snakeY=snakeY+velocityY*blockSize;
+            context.fillRect(snakeX, snakeY, blockSize, blockSize)
+            for(let i=0;i<snakeBody.length;i++){
+                context.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize, blockSize);
+            }
+            checkGameOver();  
+            update();      
+        }, 200);
     }
+}
 
-    for(let i=snakeBody.length-1;i>0;i--){
-        snakeBody[i]=snakeBody[i-1];
-    }
-
-    if(snakeBody.length){
-        snakeBody[0]=[snakeX, snakeY]
-    }
-
-    context.fillStyle="lime";
-    snakeX=snakeX+velocityX*blockSize;
-    snakeY=snakeY+velocityY*blockSize;
-    context.fillRect(snakeX, snakeY, blockSize, blockSize)
-    for(let i=0;i<snakeBody.length;i++){
-        context.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize, blockSize);
-    }
-
-    if(snakeX<0 || snakeX>cols*blockSize || snakeY<0 || snakeY>rows*blockSize){
+function checkGameOver(){
+    if(snakeX<0 || snakeX>cols*blockSize-1 || snakeY<0 || snakeY>rows*blockSize-1){
         gameOver=true;
-        setInterval(location.reload(), 3000);
+        displayGameOver();
     }
 
     for(let i=0;i<snakeBody.length;i++){
         if(snakeX==snakeBody[i][0] && snakeY==snakeBody[i][1]){
             gameOver=true;
-            setInterval(location.reload(), 3000);
-        
+            displayGameOver();
         }  
     }
-    
-    
+}
+
+function displayGameOver(){
+    gameOverMessage=document.getElementById("gameOver")
+    gameOverMessage.classList.add("show");
+    finalScore=document.getElementById("finalScore");
+    finalScore.innerHTML="Your score: "+score;
 }
 
 function placeFood(){
@@ -105,4 +121,16 @@ function changeDir(e){
         velocityX=1;
         velocityY=0;
     }   
+}
+
+function resetGame(){
+    score=0;
+    gameOver=false;
+    velocityX=0
+    velocityY=0
+    snakeX=blockSize*3;
+    snakeY=blockSize*3;
+    snakeBody=[];
+    gameOverMessage.classList.remove("show");
+    startGame();
 }
