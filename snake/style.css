@@ -30,16 +30,19 @@
 
 .restartButton{
 	font-size: 2rem;
-	background-color: white;
-	border: 1px solid black;
 	padding:0.25em 0.5em;
 	cursor: pointer;
-}
-
-.restartButton:hover{
 	background-color: black;
 	color: white;
 	border-color: white;
+	border-radius: 1rem;
+	transition: 0.7s ease;
+}
+
+.restartButton:hover{
+	background-color: white;
+	border-color: white;
+	color: black;
 }
 
 body{
