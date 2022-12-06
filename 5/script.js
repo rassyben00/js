@@ -18,9 +18,52 @@ var button=document.getElementById("button");
 var body=document.getElementById("gradient");
 var firstColor=document.getElementById("random_color");
 
-button.addEventListener("click", setInterval(start, 50));
+button.addEventListener("click", setInterval(start, 500));
 
+/*
+function compareColor(color11, color11new){
+    if(color11!=color11new && color11>color11new){
+        color11--;
+    }if(color11<color11new){
+        color11++;
+    }
+    console.log(color11)
+}
+
+function newColor(color11, color11new){
+    if(color11==color11new){
+        color11=color11new;
+        color11new=randomColor();
+    }
+}
+
+function newDir(direction, directionNew){
+    if(direction==directionNew){
+        direction=directionNew;
+        directionNew=randomDirection();
+    }
+
+}
+*/
 function start(){
+    /*
+    compareColor(color11, color11new)
+    compareColor(color12, color12new)
+    compareColor(color13, color13new)
+    compareColor(color21, color21new)
+    compareColor(color22, color22new)
+    compareColor(color23, color23new)
+    compareColor(direction, directionNew)
+
+    newColor(color11, color11new)
+    newColor(color12, color12new)
+    newColor(color13, color13new)
+    newColor(color21, color21new)
+    newColor(color22, color22new)
+    newColor(color23, color23new)
+
+    newDir(direction, directionNew)
+    */
     if(color11!=color11new && color11>color11new){
         color11--;
     }if(color11<color11new){
@@ -92,7 +135,7 @@ function start(){
     
     if(direction==directionNew){
         direction=directionNew;
-        directionNew=randomColor();
+        directionNew=randomDirection();
     }
 
     setColor(color11, color12, color13, color21, color22, color23, direction);
