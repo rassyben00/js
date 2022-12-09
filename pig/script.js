@@ -24,7 +24,7 @@ var score2=0;
 var currentScore=0;
 var activePlayer=1; //1 or 2
 let random;
-let pointsToWin=2;
+let pointsToWin=100;
 
 function roll(){
     random=Math.floor(Math.random()*6+1);
