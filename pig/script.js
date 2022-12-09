@@ -1,4 +1,6 @@
 var newGameBtn=document.getElementById("new-game");
+var restartBtn=document.getElementById("restartButton");
+var gameOverMessage=document.getElementById("gameOver");
 var rollBtn=document.getElementById("roll");
 var holdBtn=document.getElementById("hold");
 var dice=document.getElementById("dice");
@@ -6,121 +8,112 @@ var displayCurrentScore1=document.getElementById("current-score1");
 var displayCurrentScore2=document.getElementById("current-score2");
 var displayScore1=document.getElementById("score1");
 var displayScore2=document.getElementById("score2");
+var player1=document.getElementById("player1")
+var player2=document.getElementById("player2")
+var displayWinner=document.getElementById("displayWinner");
+var playBtn=document.getElementById("playButton");
+
+rollBtn.addEventListener("click", roll);
+holdBtn.addEventListener("click", hold);
+newGameBtn.addEventListener("click", reset);
+restartBtn.addEventListener("click", reset);
+playBtn.addEventListener("click", reset);
 
 var score1=0;
 var score2=0;
 var currentScore=0;
-var activePlayer=1;
-playing=true
-
+var activePlayer=1; //1 or 2
 let random;
-
-let pointsToWin=20;
+let pointsToWin=2;
 
 function roll(){
-    random=Math.floor(Math.random()*6+1)
+    random=Math.floor(Math.random()*6+1);
     dice.src="dice-"+random+".png";
-    currentScoreFunction()
-    isOne()
+    currentScoreFunction();
+    isOne();
     if(random==1){
-    switchPlayers()
+        switchPlayers();
     }
 }
 
-rollBtn.addEventListener("click", roll)
-holdBtn.addEventListener("click", hold)
-newGameBtn.addEventListener("click", reset)
-
 function currentScoreFunction(){
-    if(activePlayer%2==1){
+    if(activePlayer==1){
         currentScore=currentScore+random;
         displayCurrentScore1.innerHTML=currentScore;
     }else{
         currentScore=currentScore+random;
         displayCurrentScore2.innerHTML=currentScore;
     }
-    
 }
 
 function hold(){
     win()
-    if(activePlayer%2==1 && playing==true){
+    if(activePlayer==1){
         score1=score1+currentScore;
         displayScore1.innerHTML=score1;
         currentScore=0;
         displayCurrentScore1.innerHTML=currentScore;
-        activePlayer++;
+        activePlayer=2;
         switchPlayers()
-    }else if(activePlayer%2==0 && playing==true){
+    }else if(activePlayer==2){
         score2=score2+currentScore;
         displayScore2.innerHTML=score2;
         currentScore=0;
         displayCurrentScore2.innerHTML=currentScore;
-        activePlayer++;
+        activePlayer=1;
         switchPlayers()
-    }
-    if(win){
-        playing=true;
-        if(activePlayer%2==1){
-            switchPlayers()
-        }
     }
 }
 
 function win(){
-    if(activePlayer%2==1){
+    if(activePlayer==1){
         if(score1+currentScore>=pointsToWin){
-            alert("player1 won")
-            playing=false;
-            reset()
+            displayWinner.innerHTML="Player 1 won!";
+            gameOverMessage.classList.add("show");
         }
     }else{
         if(score2+currentScore>=pointsToWin){
-            alert("player2 won")
-            playing=false;
-            reset()
+            displayWinner.innerHTML="Player 2 won!";
+            gameOverMessage.classList.add("show");
         }
     }
 }
 
 function reset(){
-    score1=0
-    score2=0
-    currentScore=0
-    activePlayer=1
-    //playing=true;
+    document.getElementById("play").style.visibility = 'hidden';
+    score1=0;
+    score2=0;
+    currentScore=0;
+    activePlayer=1;
     displayCurrentScore1.innerHTML=currentScore;
     displayCurrentScore2.innerHTML=currentScore;
     displayScore1.innerHTML=score1;
     displayScore2.innerHTML=score2;
-    if(activePlayer%2==1){
-        switchPlayers()
+    if(activePlayer==1){
+        switchPlayers();
     }
+    gameOverMessage.classList.remove("show");
 }
 
 function isOne(){
     if(random==1){
-        if(activePlayer%2==1){
-            currentScore=0;
+        currentScore=0;
+        if(activePlayer==1){
             displayCurrentScore1.innerHTML=currentScore;
-            activePlayer++;
+            activePlayer=2;
         }else{
-            currentScore=0;
             displayCurrentScore2.innerHTML=currentScore;
-            activePlayer++;
+            activePlayer=1;
         }
     }
 }
 
-var player1=document.getElementById("player1")
-var player2=document.getElementById("player2")
-
 function switchPlayers(){
-    if(activePlayer%2!=1 && playing==true){
-        player1.classList.remove("active")
-        player2.classList.add("active")
-    }else if(activePlayer%2!=0 && playing==true){
-        player2.classList.remove("active")
-        player1.classList.add("active")
+    if(activePlayer==2){
+        player1.classList.remove("active");
+        player2.classList.add("active");
+    }else if(activePlayer==1){
+        player2.classList.remove("active");
+        player1.classList.add("active");
     }
 }
