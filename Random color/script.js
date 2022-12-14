@@ -9,7 +9,6 @@ function setColor(){
     var direction=randomDirection();
     body.style.background = "linear-gradient("+direction+",  "+color1+", "+color2+")";
     printColor(color1, color2, direction);
-    console.log(color1, color2, direction)
 }
 
 function randomColor(){
