@@ -45,7 +45,7 @@ function start(){
 
 function countdown(){
     timeToAnswer--;
-    displayRemainingTime.innerHTML =  timeToAnswer; 
+    displayRemainingTime.innerHTML =  timeToAnswer+" seconds"; 
     if(timeToAnswer==0){
         lives--;
         timeToAnswer=10;
@@ -68,10 +68,10 @@ function createExcercise(){
 }
 
 function displayElements(){
-    excercise.innerHTML=var1+" "+randomOperator+" "+var2+" = "+solution;
-    displayScore.innerHTML="score: "+score;
-    displayLives.innerHTML="lives: "+lives;
-    displayRemainingTime.innerHTML=timeToAnswer;
+    excercise.innerHTML=var1+" "+randomOperator+" "+var2+" = ?";
+    displayScore.innerHTML="Score: "+score;
+    displayLives.innerHTML="Lives: "+lives;
+    displayRemainingTime.innerHTML=timeToAnswer+" seconds";
 }
 
 function createSolution(){

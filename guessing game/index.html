@@ -5,15 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>guessing game</title>
+    <title>Guessing game</title>
 </head>
 <body>
-    <div class="excercise" id="excercise">asd</div>
-    <input type="text" class="input" id="input" name="input">
-    <button class="submitBtn" id="submitBtn">submit</button>
-    <div class="score" id="score"></div>
-    <div class="lives" id="lives"></div>
-    <div class="remainingTime" id="remainingTime"></div>
+    <div class="container">
+        <div class="excercise" id="excercise"></div>
+        <div class="twoColumns">
+            <div class="column">
+                <input type="text" class="input" id="input" name="input" placeholder="Your answer..." maxlength="4" size="10">
+                <button class="submitBtn" id="submitBtn">submit</button>
+            </div>
+            <div class="column">
+                <div class="score displayedElements" id="score"></div>
+                <div class="lives displayedElements" id="lives"></div>
+                <div class="remainingTime displayedElements" id="remainingTime"></div>
+            </div>
+        </div>
+    </div>
 
     <div class="play" id="play">
         <button class="playButton button" id="playButton">play</button>
