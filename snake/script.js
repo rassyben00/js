@@ -27,6 +27,7 @@ gameOverMessage=document.getElementById("gameOver");
 finalScore=document.getElementById("finalScore");
 displayScore=document.getElementById("displayScore");
 restartButton=document.getElementById("restartButton");
+var playBtn=document.getElementById("playButton");
 canvas=document.getElementById("canvas");
 canvas.height=rows*blockSize;
 canvas.width=cols*blockSize;
@@ -34,10 +35,10 @@ context=canvas.getContext("2d");
 
 document.addEventListener("keyup", changeDir);
 restartButton.addEventListener("click", resetGame);
-
-startGame();
+playBtn.addEventListener("click", startGame);
 
 function startGame(){
+    document.getElementById("play").style.visibility = 'hidden';
     displayScore.innerHTML="Score: "+score;
 
     placeFood();
