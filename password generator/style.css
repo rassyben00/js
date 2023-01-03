@@ -25,7 +25,7 @@ body{
 
 .title{
     color:grey;
-    font-size: 0.8rem;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
 }
@@ -37,9 +37,9 @@ body{
     align-items: center;
     flex-direction: row;
     margin: 0.5rem 0rem 1rem 0rem;
-    padding: 20px;
-    font-size: 30px;
-    letter-spacing: 3px;
+    padding: 15px;
+    font-size: 25px;
+    letter-spacing: 2px;
     background-color: rgb(45, 42, 42);
 }
 
@@ -48,7 +48,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 16rem;
 }
 
 .icons{
@@ -59,11 +59,20 @@ body{
 
 .icons i{
     color:var(--theme-color);
+    transition: 0.2s ease;
+}
+
+.icons i:active{
+    scale:0.9;
+}
+
+.icons i:hover{
+    cursor:pointer;
 }
 
 .main-options{
     background-color: rgb(45, 42, 42);
-    margin: 0.5rem 0rem 1rem 0rem;
+    margin: 0.5rem 0rem 0.5rem 0rem;
     padding: 20px;
     font-size: 20px;
     letter-spacing: 3px;
@@ -71,8 +80,9 @@ body{
 
 .length-title{
     color: white;
-    font-size: 0.8rem;
+    font-size: 1rem;
     letter-spacing: 1px;
+    font-weight: 800;
 }
 
 .length{
@@ -85,6 +95,7 @@ body{
 .length-value{
     color:var(--theme-color);
     font-size:2rem;
+    font-weight: 900;
 }
 
 .slider-container{
@@ -137,7 +148,7 @@ body{
     align-items: center;
   }
 
-  .box input {
+.box input {
     margin: 0;
     margin-right: 20px;
     -webkit-appearance: none;
@@ -151,3 +162,15 @@ body{
     font: var(--fa-font-solid);
     content: '\f00c';
   }
+
+.note{
+    font-size: .5rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.note-container{
+    display: flex;
+    justify-content: center;
+
+}
