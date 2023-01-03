@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,15 +10,14 @@
 </head>
 <body>
     <div class="container">
-
         <div class="title">Password Generator</div>
         <div class="main-password">
-            <div class="generated-password">asdasdas</div>
+            <div class="generated-password" id="generated-password">A3e!!9Ueg</div>
             <div class="icons">
-                <div class="refresh">
+                <div class="refresh" id="refresh">
                     <i class="fa-solid fa-arrows-rotate"></i>
                 </div>
-                <div class="copy">
+                <div class="copy" id="copy">
                     <i class="fa-solid fa-copy"></i>
                 </div>
             </div>
@@ -26,7 +25,7 @@
         <div class="main-options">
             <div class="length">
                 <div class="length-title">Character Length</div>
-                <div class="length-value">10</div>
+                <div class="length-value" id="length-value">9</div>
             </div>
             <div class="slider-container">
                 <input class="slider" type="range" name="range" id="range" min="4" max="14">
@@ -49,9 +48,11 @@
                     <div class="checklabel">Include Symbols</div>
                 </div>
             </div>
-      </div>
-        </div>  
-    </div>
-    
+        </div>
+        <div class="note-container">
+            <div class="note">Note! This concept is based on random values. <br>It does not necessarily mean, that it will <br>contain ALL the checked conditions.</div>
+        </div>
+    </div>  
+    <script src="script.js"></script>
 </body>
 </html>
