@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --Playfair: 'Playfair Display', serif;
+    --Quicksand: 'Quicksand', sans-serif;
+    --Roboto: 'Roboto', sans-serif;
+    --Inter:'Inter', sans-serif;
+    --dark: #3c393d;
+    --exDark: #2b2b2b;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+.navbar-desktop{
+    color:#fff;
+    background-color:#0c3e6a;
+    font-family: var(--Inter);
+}
+
+.navbar-donate i{
+    color:#fff;
+}
+
+.navbar-menu i{
+    color:#fff;
+}
+
+.navbar-desktop a{
+    text-decoration: none;
+    color:#fff;
+    padding:0.4rem 0.2rem;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    transition: opacity 0.5s ease;
+    font:bold;
+    font-weight: 600;
+}
+ 
+.navbar-desktop a:hover{
+    opacity:0.7;
+}
+    
+.date{
+    font-size: 0.9rem;
+}
+
+#date{
+    font-size: 0.9rem;
+}
+
+.date span{
+    font:bold;
+    font-weight: 800;
+}
+
+.currency{
+    color:aquamarine;
+    font-size: 0.9rem;
+}
+
+.currency span{
+    color:#fff; 
+}
+
+.navbar-nav-desktop{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0.3rem 0.3rem 0.3rem 0.3rem;
+    margin:0 1rem 0 1rem;
+}
+
+.navbar-nav{
+    display: flex;
+    justify-content: space-between;
+    background: #145a97;
+}
+
+.navbar-menu{
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--Inter);
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 1000;
+}
+
+.hamburger{
+    display: block;
+    position: relative;
+    z-index: 2;
+    padding:1rem;
+}
+
+.hamburger a{
+    transition: color 0.3s ease;
+}
+
+.hamburger input{
+  display: block;
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  top: 15px;
+  left: -5px;
+  cursor: pointer; 
+  opacity: 0; 
+  z-index: 3;
+}
+
+.hamburger span{
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin-bottom: 3px;
+  position: relative;
+  background: #fff;
+  border-radius: 3px; 
+  z-index: 2;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),     
+              opacity 0.55s ease;
+}
+
+.hamburger span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+.hamburger span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+.hamburger input:checked ~ span{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: red;
+}
+
+.hamburger input:checked ~ span:nth-last-child(3){
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+.hamburger input:checked ~ span:nth-last-child(2){
+  transform: rotate(-45deg) translate(0, -1px);
+
+}
+
+.menu label{
+    font-family: var(--Inter);
+    padding: 5rem 1rem 0 2rem;
+    font-size: 2rem;
+    display:inline-block;
+}
+
+.menu{
+    padding:2rem 0 0 1rem;
+    opacity: 0.97;
+    position:fixed;
+    font-weight: 900;
+    font-family: var(--Inter);
+    width: auto;
+    height:100vh;
+    left:0px;
+    bottom:0vh;
+    overflow: scroll;
+    background: #ededed;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+.menu li{
+  margin: 0 4rem;
+  padding:1rem 1rem;
+  font-size: 22px;
+  border-top: 1px solid rgb(192, 186, 186);
+  text-transform: uppercase;
+  list-style-type: square;
+
+}
+
+.menu li a{
+    text-decoration: none;
+    color:black;
+    font-size: 1rem;
+    font-family: var(--Inter);
+}
+
+.hamburger input:checked ~ ul{
+  transform: none;
+}
+
+.navbar-menu p{
+    color:#fff;
+    cursor:pointer;
+}
+
+.navbar-menu i{
+    padding:1rem;
+    cursor:pointer;
+}
+
+.navbar-logo a{
+    font-size: 3rem;
+    margin:1rem;
+    color:#fff;
+    cursor:pointer;
+    text-decoration: none;
+}
+
+.navbar-donate{
+    display: inline-flex;
+    align-items: center;
+}
+
+.navbar-donate button{
+    color:rgb(0, 0, 0);
+    background: yellow;
+    border-radius: 0.3rem;
+    border:none;
+    padding:0.7rem;
+    margin:0 2rem 0 0;
+    font:bold;
+    font-weight: 1000;
+    cursor:pointer;
+    transition: 0.7s ease;
+    font-family: var(--Inter);
+
+}
+
+.navbar-donate button:hover{
+    background:#fff;
+
+}
+
+.navbar-donate i{
+    padding:1rem;
+    cursor:pointer;
+}
+
+footer{
+    background: #145a97;
+}
+
+.footer-links a{
+    text-decoration: none;
+    color:#fff;
+    margin:1rem 0.5rem;
+    text-transform: capitalize;
+
+}
+
+.footer-links a:first-child{
+    cursor:auto;
+    pointer-events: none;
+}
+
+.footer-links a:first-child:hover{
+    border-bottom:0px !important;
+}
+
+.footer-links a:hover{
+    border-bottom: 1px solid #fff;
+
+}
+
+.footer-links{
+    font-family: var(--Inter);
+    padding:3rem 1rem 2rem 1rem;
+    line-height: 3rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.footer-app{
+    display:flex;
+    justify-content: center;
+    margin: 1rem 1rem;
+}
+
+.footer-app img{
+    width:160px;
+    height: 65px;
+}
+
+.footer-app img:hover{
+    opacity:0.7;
+}
+
+hr{
+    background:#c5d0d1;
+    height:1px;
+    border:none;
+}
+
+.footer-social{
+    display: flex;
+    justify-content: center;
+}
+
+.footer-social a{
+    color:#fff;
+    margin:1rem;
+    font-size: 1.5rem;
+    padding:0 0 0.5rem 0;
+
+}
+
+.footer-social a:hover{
+    border-bottom: 1px solid #fff;
+}
+
+.body img{
+    width: 100%;
+    height: auto;
+}
+
+.body .container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    margin:3rem;
+    font-family: var(--Inter);
+}
+
+.body h1{
+    font-size: 1.2rem;
+    cursor:pointer;
+}
+
+.body h1:hover a:hover{
+    opacity:0.7;
+}
+
+.body a{
+    font-family: var(--Inter);
+    text-decoration: none;
+    color:black;
+}
+
+.body p{
+    cursor:pointer;
+}
+
+.body p:hover{
+    opacity:0.7;
+}
+
+#center img{
+    width: 100%;
+    height: auto;
+}
+
+.content-img span{
+    position: absolute;
+    z-index: 1;
+    bottom:0px;
+    left:0px;
+    background: #fff;
+    color:green;
+    padding: 0.2rem 0.3rem 0rem 0rem;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: 1000;
+}
+
+.content-img{
+    position: relative;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media all and (max-width:1200px){
+    .navbar-desktop{
+        display:none;
+    }
+    .navbar-donate button{
+        display:none;
+    }
+    .body .container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .body .container{
+        gap: 0rem;
+        margin:1rem;
+        padding:1rem;
+    }
+    .menu{
+        width:100%;
+    }
+}
