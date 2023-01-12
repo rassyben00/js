@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:wght@500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
+    
     <title>telex</title>
 </head>
 <body> 
@@ -26,7 +26,14 @@
                         <a href="under_construction/kidolgozasalatt.html">zacc</a>
                         <a href="under_construction/kidolgozasalatt.html">english</a>
                     </div>  
-                    <div class="currency">EUR 379,08 Ft USD 347,71 Ft <span>8°19°</span></div>
+                    <div class="right-side-container">
+                        <div class="currency">EUR 379,08 Ft USD 347,71 Ft</div>
+                        <div class="weather">
+                            <img src="" class="icon right"/>
+                            <div class="right" id="minTemp"></div>
+                            <div class="right" id="maxTemp"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -132,8 +139,7 @@
             <a href="under_construction/kidolgozasalatt.html"><i class="fab fa-reddit"></i></a>
         </div>
     </footer>
-    <script>
-        document.getElementById("date").innerHTML=date();
-    </script>
+    <script src="date.js"></script>
+    <script src="weather.js"></script>
 </body>
 </html>
