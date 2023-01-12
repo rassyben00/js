@@ -59,10 +59,36 @@
 .currency{
     color:aquamarine;
     font-size: 0.9rem;
+    margin: 0rem 0.3rem;
 }
 
-.currency span{
-    color:#fff; 
+.right{
+    margin: 0rem 0.1rem;
+}
+
+.icon{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+#minTemp{
+    color:rgb(122, 122, 210);
+}
+
+#maxTemp{
+    color:rgb(209, 117, 117);
+}
+
+.weather{
+    font-size: 0.9rem;
+    display: flex;
+    margin: 0rem 0.3rem;
+    align-items: center;
+}
+
+.right-side-container{
+    display: flex;
+    justify-content: left;
 }
 
 .navbar-nav-desktop{
